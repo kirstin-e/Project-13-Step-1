@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maskify Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Maskify Number</h2>
+    <label for="cardNumber">Enter a 16-digit number:</label>
+    <input type="text" id="cardNumber" maxlength="16">
+    <button onclick="maskify()">Maskify</button>
+    <p id="maskedNumber"></p>
+
+<h2>Background and explanation to project 13b</h2>
+
+I chose this project as it appeared straightforward and a good learning opportunity.  The question was found on CodeWars as in the following image <img src="question13b.png"><p>
+
+The javascript code in the project works as follows: 
+maskify() is a function triggered by an event (in this case, a button click) to process the number inputted by the user from an HTML input field with the ID 'cardNumber'.
+The function then retrieves the value entered in the 'cardNumber' input field using document.getElementById('cardNumber').value.
+The function checks if the input is exactly 16 characters long and consists of only numeric characters using userInput.length !== 16 || isNaN(userInput)).
+If the input is invalid, it displays an alert informing the user to enter a valid 16-digit number and exits the function.
+If the input is valid, it creates a masked version of the number:
+It takes the first 12 characters of the input using userInput.slice(0, -4) and then replaces each character in those 12 characters with '#' using replace(/./g, '#').
+The function then appends the last 4 characters of the original input using userInput.slice(-4).
+Finally, it updates the text content of an HTML element with the ID 'maskedNumber' to display the masked number preceded by the text 'The Masked number is '.
+
+
+    <script>
+        function maskify() {
+            var userInput = document.getElementById('cardNumber').value;
+            if (userInput.length !== 16 || isNaN(userInput)) {
+                alert('Please enter a valid 16-digit number.');
+                return;
+            }
+
+            var maskedNumber = userInput.slice(0, -4).replace(/./g, '#') + userInput.slice(-4);
+            document.getElementById('maskedNumber').innerText = 'The Masked number is ' + maskedNumber;
+        }
+    </script>
+</body>
+</html>

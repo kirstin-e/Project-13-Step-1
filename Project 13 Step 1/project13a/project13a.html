@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .list-container {
+            background-color: #ffe0e0; /* pale pink background */
+            color: #333333; /* dark charcoal text color */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="list-container">
+        <h2>A List of all Natural Numbers less than or equal to 1000 that are divisible by 3 or 5</h2>
+        <p id="numbers"></p>
+        <p id="sum"></p>
+    </div>
+
+<h2>Background and Explanation to project 13a</h2>
+
+The problem 13a comes from CodeWars.  I chose only to answer 2 questions, and chose the Code Wars questions as they appeared more straightforward than those from other sites.  For project 13a, the question I responded to is seen in the following image from CodeWars <img src="question13a.png">
+
+The javascript code for project 13a works basically by using a function called generateNumbers() to create an array called numbers. It iterates through numbers from 1 to 1000 using a for loop. For each number, it checks if it's divisible by 3 or 5 using the % (modulo) operator. If the number is divisible by 3 or 5, it adds that number to the numbers array using numbers.push(i).
+Finally, it returns the numbers array containing all numbers meeting the conditions.
+
+   <script src="project13a.js"></script>
+</body>
+</html>
